@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+		<button type='button' id="audioplay">오디오재생 </button>
+         
+</body>
+<script>
+		var audio = new Audio('./assets/Twinkle.mp3');
+		
+		document.getElementById('audioplay')
+			.addEventListener('click', function(e){
+				audio.play();
+			});
+
+</script>
+</html>

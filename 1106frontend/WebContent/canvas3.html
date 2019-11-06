@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>캔버스 선그리기 </title>
+</head>
+<body>
+
+		<canvas id="canvas"  width="500"  height="500" >
+		</canvas>        
+
+</body>
+<script>
+		var canvas = document.getElementById("canvas");
+		var context = canvas.getContext("2d");
+		//메모리에 그림을 그리기 시작 
+		context.beginPath();
+		context.arc(200,200,150,0, Math.PI*2, false);
+		//실제 그림을 그려달라고 요청 
+	   
+	 //	context.fill();
+	   // clip은 출력영역을 설정 
+    //  context.clip();
+	    
+	   //이미지 출력
+	   var image = new Image(); 
+	   image.src = "./images/sister.jpg";
+	   image.addEventListener('load', function(e){
+		       context.drawImage(image, 0, 0, 450, 400);
+		       //선두께 조정 
+		       context.lineWidth = 3; 
+		       //선 색 조정 
+		       context.strokeStyle = "rgba(255, 0, 0, 1)";
+		       //그림자 설정 
+		      // context.shadowColor =  "rgba(255, 0, 0, .9)"
+		       //context.shadowBlur = 15;
+		       //context.shadowOffsetX =10;
+		       //context.shadowOffsetY =10;
+		       //context.stroke();
+		       
+		       context.strokeStyle = "rgba(128, 256, 256, 1)";
+		       context.font = 'bold 40px verdana, sans-serif';
+		       context.strokeText('CANVAS', 150, 300);
+	   });
+</script>
+</html>
